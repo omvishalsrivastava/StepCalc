@@ -1,7 +1,5 @@
 StepCalc
 
-Version
-
 v0.2
 
 Description
