@@ -1,0 +1,153 @@
+import java.util.*;
+
+public class StepCalc {
+
+    static double[] nums = new double[50];
+    static char[] ops = new char[50];
+
+    static int n = 0;
+    static int m = 0;
+    static int step = 1;
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter expression: ");
+        String input = sc.nextLine();
+
+        parse(input);
+
+        solveMulDiv();
+        solveAddSub();
+
+        System.out.println("Final Answer: " + format(nums[0]));
+    }
+
+    // -------- PARSE --------
+    static void parse(String s) {
+
+        n = 0;
+        m = 0;
+        step = 1;
+
+        s = s.replace(" ", "");
+        String num = "";
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char ch = s.charAt(i);
+
+            if ((ch >= '0' && ch <= '9') || ch == '.') {
+                num += ch;
+            }
+            else if (ch == '-' && (i == 0 || isOp(s.charAt(i - 1)))) {
+                num += ch;
+            }
+            else {
+                nums[n++] = Double.parseDouble(num);
+                ops[m++] = ch;
+                num = "";
+            }
+        }
+
+        nums[n++] = Double.parseDouble(num);
+    }
+
+    static boolean isOp(char c) {
+        return c == '+' || c == '-' || c == '*' || c == '/';
+    }
+
+    // -------- MUL / DIV --------
+    static void solveMulDiv() {
+
+        for (int i = 0; i < m; i++) {
+
+            if (ops[i] == '*' || ops[i] == '/') {
+
+                double a = nums[i];
+                double b = nums[i + 1];
+
+                if (ops[i] == '/' && b == 0) {
+                    System.out.println("Error: Division by zero");
+                    return;
+                }
+
+                double r = (ops[i] == '*') ? a * b : a / b;
+
+                System.out.println("Step " + step++ + ": " +
+                        format(a) + " " + ops[i] + " " + format(b) + " = " + format(r));
+
+                nums[i] = r;
+
+                shift(i);
+
+                System.out.print("=> ");
+                printExpr();
+
+                i--;
+            }
+        }
+    }
+
+    // -------- ADD / SUB --------
+    static void solveAddSub() {
+
+        for (int i = 0; i < m; i++) {
+
+            double a = nums[i];
+            double b = nums[i + 1];
+
+            double r = (ops[i] == '+') ? a + b : a - b;
+
+            System.out.println("Step " + step++ + ": " +
+                    format(a) + " " + ops[i] + " " + format(b) + " = " + format(r));
+
+            nums[i] = r;
+
+            shift(i);
+
+            System.out.print("=> ");
+            printExpr();
+
+            i--;
+        }
+    }
+
+    // -------- SHIFT FIX --------
+    static void shift(int i) {
+
+        for (int j = i + 1; j < n - 1; j++) {
+            nums[j] = nums[j + 1];
+        }
+
+        for (int j = i; j < m - 1; j++) {
+            ops[j] = ops[j + 1];
+        }
+
+        n--;
+        m--;
+    }
+
+    // -------- PRINT EXPRESSION --------
+    static void printExpr() {
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(format(nums[i]));
+            if (i < m) {
+                System.out.print(" " + ops[i] + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    // -------- FORMAT --------
+    static String format(double x) {
+
+        if (x == (long) x) {
+            return String.valueOf((long) x);
+        }
+
+        return String.valueOf(x);
+    }
+}
