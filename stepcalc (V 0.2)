@@ -1,3 +1,10 @@
+/**
+ * Basic step by step expression evaluator
+ *
+ * @omvishalsrivastava
+ * @version 0.2
+ */
+
 import java.util.*;
 
 public class StepCalc {
