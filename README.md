@@ -4,3 +4,4 @@
 ## Features - Parses arithmetic expressions - Handles +, -, *, / - 
 Shows step-by-step evaluation  
 ## Planned - brackets support - UI version (web app) - better parsing engine
+##v0.2 - fixed array shifting bugs and stabilized evaluation logic
