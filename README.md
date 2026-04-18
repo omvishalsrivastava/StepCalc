@@ -1,76 +1,71 @@
 StepCalc
 
-A simple step-by-step arithmetic expression calculator written in Java.
+Version
 
-📜 Version History
 v0.2
-Fixed array shifting bugs
-Stabilized evaluation logic
-Correct step-by-step output
 
-v0.1
-Initial prototype
-Basic parsing using arrays
-Supported +, -, *, /
-Step tracking implemented
-Had bugs in shifting and output logic
+Description
 
-📌 Description
+StepCalc is a step-by-step arithmetic expression calculator written in Java. It evaluates expressions using operator precedence and displays each computation step.
 
-StepCalc evaluates arithmetic expressions using BODMAS rules and displays each calculation step clearly.
+Features
 
-✨ Features
-
-- Supports "+", "-", "*", "/"
+- Supports +, -, *, /
 - Step-by-step evaluation
-- Correct operator precedence (BODMAS)
-- Clean console output
+- Correct operator precedence
+- Console-based output
 
-🛠️ Improvements in v0.2
+Improvements in v0.2
 
 - Fixed array shifting bugs
 - Stabilized evaluation logic
-- Removed incorrect outputs
-- Improved internal state handling
+- Corrected output issues
+- Improved state handling
 
-📥 Example
+Example
 
-Input:
+Input
 
 4*5+2
 
-Output:
+Output
 
 Step 1: 4 * 5 = 20
 20 + 2
 Step 2: 20 + 2 = 22
 Final Answer: 22
 
-⚠️ Limitations
+Limitations
 
-- No support for brackets "()"
+- No support for brackets ()
 - No negative numbers
 - Limited decimal handling
 
-🔮 Planned (v0.3)
+Planned (v0.3)
 
 - Brackets support
 - Negative numbers
-- Better parsing system
-- Web version (HTML + JS)
+- Improved parsing
+- Web version
 
-🧠 Learning Goal
+Version History
 
-This project focuses on understanding:
+v0.2
 
-- Expression parsing
-- Operator precedence
-- Array-based evaluation logic
+- Fixed array shifting bugs
+- Stabilized evaluation logic
+- Correct step-by-step output
 
-📁 File
+v0.1
 
-- "StepCalc.java"
+- Initial prototype
+- Basic parsing using arrays
+- Supported +, -, *, /
+- Step tracking implemented
+- Known issues in shifting and output logic
 
----
+File
+- StepCalc.java
 
-Made as a personal project.
+  ##THIS IS A PERSONAL PROJECT.
+  
