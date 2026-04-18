@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StepCalc</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+            background: #d8d6d6;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .box {
+            display: inline-block;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 250px;
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        #out {
+            margin-top: 15px;
+            text-align: left;
+            white-space: pre-wrap;
+            font-family: monospace;
+        }
+
+        label {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>StepCalc</h1>
+
+<div class="box">
+
+    <div class="row">
+        <input id="inp" placeholder="Enter expression">
+        <button onclick="calc()">Solve</button>
+    </div>
+
+    <label>
+        <input type="checkbox" id="steps" checked>
+        Show Steps
+    </label>
+
+    <pre id="out"></pre>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
