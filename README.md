@@ -1,6 +1,6 @@
 StepCalc
 
-v0.2
+v0.1.1
 
 Description
 
@@ -13,7 +13,7 @@ Features
 - Correct operator precedence
 - Console-based output
 
-Improvements in v0.2
+Improvements in v0.1.1
 
 - Fixed array shifting bugs
 - Stabilized evaluation logic
@@ -39,7 +39,7 @@ Limitations
 - No negative numbers
 - Limited decimal handling
 
-Planned (v0.3)
+Planned (v0.2)
 
 - Brackets support
 - Negative numbers
@@ -48,13 +48,13 @@ Planned (v0.3)
 
 Version History
 
-v0.2
+v0.1.1
 
 - Fixed array shifting bugs
 - Stabilized evaluation logic
 - Correct step-by-step output
 
-v0.1
+v0.1.0
 
 - Initial prototype
 - Basic parsing using arrays
